@@ -1,10 +1,8 @@
 # NotYouTube - YouTube Clone with ReactJS
 
-![NotYouTube Logo](link_to_logo_image)
-
 ## Overview
 
-**NotYouTube** is a ReactJS-based project, a YouTube clone, developed to replicate some of the key features of the popular video-sharing platform. It provides users with a familiar interface to watch videos, browse content, and interact with a responsive and intuitive design.
+**NotYouTube** is a ReactJS-based project, a YouTube clone, developed by **Keshav Bagaade** to replicate some of the key features of the popular video-sharing platform. It provides users with a familiar interface to watch videos, browse content, and interact with a responsive and intuitive design.
 
 ## Features
 
@@ -70,5 +68,5 @@ This project is licensed as a **Personal Project**. You are free to view, use, a
 
 ## Acknowledgments
 
-Special thanks to @adrianhajdin's YouTube2.0 clone tutorial - https://github.com/adrianhajdin/project_youtube_clone
+- Special thanks to @adrianhajdin's YouTube2.0 clone tutorial - https://github.com/adrianhajdin/project_youtube_clone
 
