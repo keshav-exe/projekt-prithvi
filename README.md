@@ -2,7 +2,7 @@
 
 ## Overview
 
-**NotYouTube** is a ReactJS-based project, a YouTube clone, developed by **Keshav Bagaade** to replicate some of the key features of the popular video-sharing platform. It provides users with a familiar interface to watch videos, browse content, and interact with a responsive and intuitive design.
+**NotYouTube** is a ReactJS-based project, a YouTube clone, to replicate some of the key features of the popular video-sharing platform. It provides users with a familiar interface to watch videos, browse content, and interact with a responsive and intuitive design.
 
 ## Features
 
@@ -23,7 +23,7 @@
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/notyoutube.git
+   git clone https://github.com/keshav-exe/notyoutube.git
    ```
 
 2. Navigate to the project directory:
