@@ -18,51 +18,36 @@ const Feed = () => {
   }, [selectedCategory]);
 
   return (
-    <Stack sx={{ flexDirection: { sx: "coloumn", md: "row" } }}>
+    <Stack
+      sx={{
+        flexDirection: { sx: "column", md: "row" },
+        margin: "0 auto",
+        borderRight: "1px solid #3d3d3d",
+        padding: { sx: 0, md: "0 1em" },
+        backgroundColor: "#020305",
+      }}
+    >
       <Box
         sx={{
-          height: { sx: "auto", md: "92vh" },
-          borderRight: "1px solid #3d3d3d",
-          padding: { sx: 0, md: 2 },
-          backgroundColor: "#111111" 
+          width: { sx: "auto", md: "auto" },
+          height: { sx: "auto", md: "90vh" },
+          padding: { sx: 0, md: "0 1em" },
+          position: "sticky",
         }}
       >
         <SideBar
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
-          // sx={{}}
         />
-        <Typography
-          className="copyright"
-          variant="body2"
-          sx={{
-            mt: 1.5,
-            color: "#0088ff",
-            fontSize: "0.6em",
-            fontWeight: "900",
-          }}
-        >
-          PROJECT VAAYU
-        </Typography>
-        <Typography
-          className="copyright"
-          variant="body2"
-          sx={{ color: "#fff" }}
-        >
-          Copyright 2022 KESHAV.
-        </Typography>
       </Box>
-      <Box p={2} sx={{ overflowY: "auto", height: "90vh", flex: 2 }}>
-        <Typography
-          variant="h4"
-          fontWeight="bold"
-          mb={2}
-          sx={{ color: "#f1f1f1" }}
-        >
-          {selectedCategory}
-          <span style={{ color: "#0088ff" }}> Videos</span>
-        </Typography>
-
+      <Box
+        sx={{
+          overflowY: "auto",
+          height: "92vh",
+          width: "100%",
+          padding: { sx: 0, md: "0 1em" },
+        }}
+      >
         <Videos videos={videos} />
       </Box>
     </Stack>

@@ -1,13 +1,24 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary-color: #020305;
+  --secondary-color: #b62ac1;
+  --text: #dcd8d8;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+body,
+.container {
+  background-color: var(--primary-color);
+  width: 100%;
+  margin: auto;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--text);
 }
 
 ::-webkit-scrollbar {
@@ -26,12 +37,12 @@ a {
 }
 
 .category-btn:hover {
-  background-color: #0088ff60 !important;
-  color: white !important;
+  background-color: var(--secondary-color) !important;
+  /* color: var(--secondary-color) !important; */
 }
 
-.category-btn:hover span{
-  color: white !important;
+.category-btn:hover span {
+  color: var(--text) !important;
 }
 
 .react-player {
@@ -39,40 +50,47 @@ a {
   width: 100% !important;
 }
 
-.search-bar{
-  border:none;
-  outline:none;
-  width:350px;
+.search-bar {
+  border: none;
+  outline: none;
+  width: 350px;
+  transition: all ease-in-out 0.5s;
 }
 
-.category-btn{
-  font-weight: bold !important;
+.category-btn {
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: start;
-  cursor:pointer;
-  background: transparent;
+  cursor: pointer;
+  background: #b72ac167;
   outline: none;
   border: none;
-
-  padding: 7px 15px;
+  padding: 0.75em 1em;
   margin: 10px 0px;
-  border-radius: 20px;
+  border-radius: 1em;
   transition: all 0.3s ease;
 }
 
+.navbar {
+  display: flex;
+  direction: "row";
+  justify-content: space-between;
+  padding: 1em 3em;
+  background-color: var(--primary-color);
+}
+
 @media screen and (max-width: 900px) {
-  .category-btn{
+  .category-btn {
     margin: 10px;
   }
 }
 
-@media screen and (max-width:800px){
-  .copyright{
-    display:none !important;
+/* @media screen and (max-width: 800px) {
+  .copyright {
+    display: none !important;
   }
-}
+} */
 
 @media screen and (max-width: 600px) {
   .scroll-horizontal {
@@ -82,8 +100,15 @@ a {
   .react-player {
     height: 45vh !important;
   }
-  .search-bar{
-    width:200px;
+  .search-bar {
+    width: 100%;
+  }
+
+  .navbar {
+    display: block;
+    direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
-

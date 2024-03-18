@@ -17,45 +17,58 @@ const VideoCard = ({
     id: { videoId },
     snippet,
   },
-}) => {
-  return (
-    <Card
+}) => (
+  <Card
+    sx={{
+      backgroundColor: "#111111",
+      margin: "0.5em",
+      width: { xs: "480px", sm: "364px", md: "300px" },
+      borderRadius: "0.5em",
+      border: "2px solid #1f1f1fff",
+    }}
+  >
+    <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
+      <CardMedia
+        image={snippet?.thumbnails?.high?.url}
+        alt={snippet?.title}
+        sx={{
+          width: { xs: "100%", sm: "364px", md: "300px" },
+          height: { xs: 270, sm: 200, md: 170 },
+        }}
+      />
+    </Link>
+    <CardContent
       sx={{
         backgroundColor: "#111111",
-        width: { xs: "100%", sm:'358px', md: "320px"},
-        boxShadow: "0 0 5px rgba(100,100,100,0.5)",
-        borderRadius: "0.5em",
+        height: "2em",
       }}
     >
       <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-        <CardMedia
-          image={snippet?.thumbnails?.high?.url}
-          alt={snippet?.title}
-          sx={{ width: {xs:'100%', sm:'358px', md:'320px'}, height: 180 }}
-        />
-      </Link>
-      <CardContent sx={{ backgroundColor: "#111111", height: "100px" }}>
-        <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
-          <Typography variant="subtitle1" fontWeight="bold" color="#FFF">
-            {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
-          </Typography>
-        </Link>
-        <Link
-          to={
-            snippet?.channelId
-              ? `/channel/${snippet?.channelId}`
-              : demoChannelUrl
-          }
+        <Typography
+          variant="subtitle2"
+          fontFamily={'"Montserrat", sans-serif'}
+          color="#FFF"
+          width={"100%"}
+          noWrap
         >
-          <Typography variant="subtitle2" fontWeight="bold" color="gray">
-            {snippet?.channelTitle.slice(0, 60) ||
-              demoChannelTitle.slice(0, 60)}
-            <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
-          </Typography>
-        </Link>
-      </CardContent>
-    </Card>
-  );
-};
+          {snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}
+        </Typography>
+      </Link>
+      <Link
+        to={
+          snippet?.channelId ? `/channel/${snippet?.channelId}` : demoChannelUrl
+        }
+      >
+        <Typography
+          variant="subtitle2"
+          color="gray"
+          fontFamily={'"Montserrat", sans-serif'}
+        >
+          {snippet?.channelTitle.slice(0, 60) || demoChannelTitle.slice(0, 60)}
+        </Typography>
+      </Link>
+    </CardContent>
+  </Card>
+);
 
 export default VideoCard;

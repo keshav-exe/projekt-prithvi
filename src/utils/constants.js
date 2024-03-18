@@ -1,43 +1,29 @@
-import MusicNoteIcon from '@mui/icons-material/MusicNote';
-import HomeIcon from '@mui/icons-material/Home';
-import CodeIcon from '@mui/icons-material/Code';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
-import LiveTvIcon from '@mui/icons-material/LiveTv';
-import SchoolIcon from '@mui/icons-material/School';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
-import GraphicEqIcon from '@mui/icons-material/GraphicEq';
-import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
-import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
-
-export const logo = 'https://i.ibb.co/Cw8XMmj/wind.png';
-
+import MusicNoteIcon from "@mui/icons-material/MusicNote";
+import HomeIcon from "@mui/icons-material/Home";
+import CodeIcon from "@mui/icons-material/Code";
+import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import SchoolIcon from "@mui/icons-material/School";
+import FaceRetouchingNaturalIcon from "@mui/icons-material/FaceRetouchingNatural";
+import CheckroomIcon from "@mui/icons-material/Checkroom";
+import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import TheaterComedyIcon from "@mui/icons-material/TheaterComedy";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import DeveloperModeIcon from "@mui/icons-material/DeveloperMode";
 
 export const categories = [
-  { name: 'New', icon: <HomeIcon />, },
-  // { name: 'Blazee', icon: <SportsEsportsIcon />, },
-  { name: 'Coding', icon: <CodeIcon />, },
-  { name: 'ReactJS', icon: <CodeIcon />, },
-  { name: 'NextJS', icon: <CodeIcon />, },
-  { name: 'Music', icon: <MusicNoteIcon /> },
-  { name: 'Education', icon: <SchoolIcon />, },
-  { name: 'Podcast', icon: <GraphicEqIcon />, },
-  { name: 'Movie', icon: <OndemandVideoIcon />, },
-  { name: 'Gaming', icon: <SportsEsportsIcon />, },
-  { name: 'Live', icon: <LiveTvIcon />, },
-  { name: 'Sport', icon: <FitnessCenterIcon />, },
-  { name: 'Fashion', icon: <CheckroomIcon />, },
-  { name: 'Beauty', icon: <FaceRetouchingNaturalIcon />, },
-  { name: 'Comedy', icon: <TheaterComedyIcon />, },
-  { name: 'Gym', icon: <FitnessCenterIcon />, },
-  { name: 'Crypto', icon: <DeveloperModeIcon />, },
+  { name: "New", icon: <HomeIcon /> },
+  { name: "Music", icon: <MusicNoteIcon /> },
+  { name: "Podcast", icon: <GraphicEqIcon /> },
+  { name: "Movie", icon: <OndemandVideoIcon /> },
+  { name: "Gaming", icon: <SportsEsportsIcon /> },
 ];
 
-export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
-export const demoChannelUrl = '/channel/UCyN2efmCHGOB5JCW-mz1gig';
-export const demoVideoUrl = '/video/y0ZCShdtTRM';
-export const demoChannelTitle = 'Blazee';
-export const demoVideoTitle = 'SAGE IS MY COMFORT AGENT | 1280x960';
-export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
+export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
+export const demoChannelUrl = "/channel/@YouTube";
+export const demoVideoUrl = "/video/dQw4w9WgXcQ";
+export const demoChannelTitle = "YouTube";
+export const demoVideoTitle = "New Video!!!";
+export const demoProfilePicture =
+  "http://dergipark.org.tr/assets/app/images/buddy_sample.png";

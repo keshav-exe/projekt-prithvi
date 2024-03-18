@@ -4,13 +4,13 @@ import { Stack } from "@mui/system";
 
 import { categories } from "../utils/constants";
 
-const Categories = ({ selectedCategory, setSelectedCategory}) => (
+const Categories = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     direction="row"
     sx={{
       overflowY: "auto",
       height: { sx: "auto", md: "95%" },
-      flexDirection: { md: "column" },
+      flexDirection: { sx: "row", md: "column" },
     }}
   >
     {categories.map((category) => (
@@ -18,14 +18,14 @@ const Categories = ({ selectedCategory, setSelectedCategory}) => (
         className="category-btn"
         onClick={() => setSelectedCategory(category.name)}
         style={{
-          background: category.name === selectedCategory && "#0088ff",
-          color: "white",
+          background: category.name === selectedCategory && "#b72ac198",
+          color: "#dcd8d8",
         }}
         key={category.name}
       >
         <span
           style={{
-            color: category.name === selectedCategory ? "white" : "#0088ff",
+            color: category.name === selectedCategory ? "#dcd8d8" : "#b62ac1",
             marginRight: "15px",
           }}
         >
