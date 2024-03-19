@@ -6,11 +6,13 @@ import { categories } from "../utils/constants";
 
 const Categories = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
-    direction="row"
+    flexDirection="row"
     sx={{
       overflowY: "auto",
-      height: { sx: "auto", md: "95%" },
-      flexDirection: { sx: "row", md: "column" },
+      overflowX: "auto",
+      // height: { sx: "auto", md: "" },
+      // flexDirection: { sx: "row", md: "column" },
+      padding: "1em 0",
     }}
   >
     {categories.map((category) => (
@@ -18,24 +20,21 @@ const Categories = ({ selectedCategory, setSelectedCategory }) => (
         className="category-btn"
         onClick={() => setSelectedCategory(category.name)}
         style={{
-          background: category.name === selectedCategory && "#b72ac198",
+          background: category.name === selectedCategory && "#111825",
           color: "#dcd8d8",
         }}
         key={category.name}
       >
         <span
           style={{
-            color: category.name === selectedCategory ? "#dcd8d8" : "#b62ac1",
+            // color: category.name === selectedCategory ? "#dcd8d8" : "#b62ac1",
+            color: "#dcd8d8",
             marginRight: "15px",
           }}
         >
           {category.icon}
         </span>
-        <span
-          style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}
-        >
-          {category.name}
-        </span>
+        <span>{category.name}</span>
       </button>
     ))}
   </Stack>

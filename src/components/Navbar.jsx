@@ -14,14 +14,14 @@ const Navbar = () => (
       style={{
         display: "flex",
         alignItems: "center",
-        fontWeight: "900",
+        fontWeight: "400",
         fontSize: "2em",
       }}
     >
       not
       <span
         style={{
-          color: "#b62ac1",
+          fontWeight: "800",
         }}
       >
         YouTube

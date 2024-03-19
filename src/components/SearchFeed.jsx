@@ -17,21 +17,22 @@ const SearchFeed = () => {
   }, [searchTerm]);
 
   return (
-    <Box minHeight="95vh" sx={{ margin: "0 7em", padding: "0" }}>
+    <Box
+      minHeight="92vh"
+      sx={{
+        margin: { md: "0 7em", sx: "0 2em" },
+      }}
+    >
       <Typography
         fontFamily={"Montserrat"}
         sx={{
-          position: "sticky",
-          margin: "0.25em",
+          margin: "0",
           color: "#dcd8d8",
-          fontSize: { md: "2em", sx: "1em" },
+          fontSize: { md: "2em", sx: "2em" },
         }}
       >
         Search Results For :
-        <span style={{ color: "#b62ac1", fontWeight: "bold" }}>
-          {" "}
-          {searchTerm}{" "}
-        </span>
+        <span style={{ fontWeight: "bold" }}> {searchTerm} </span>
       </Typography>
       <Videos videos={videos} />
     </Box>

@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { SideBar, Videos } from "./";
@@ -20,19 +20,15 @@ const Feed = () => {
   return (
     <Stack
       sx={{
-        flexDirection: { sx: "column", md: "row" },
-        margin: "0 auto",
-        borderRight: "1px solid #3d3d3d",
-        padding: { sx: 0, md: "0 1em" },
-        backgroundColor: "#020305",
+        flexDirection: { sx: "column", md: "column" },
+        padding: { sx: "0 0em", md: "0 8em" },
+        width: "100vw",
+        backgroundColor: "#191819",
       }}
     >
       <Box
         sx={{
-          width: { sx: "auto", md: "auto" },
-          height: { sx: "auto", md: "90vh" },
-          padding: { sx: 0, md: "0 1em" },
-          position: "sticky",
+          padding: { sx: "auto", md: "0 1em" },
         }}
       >
         <SideBar
@@ -43,9 +39,9 @@ const Feed = () => {
       <Box
         sx={{
           overflowY: "auto",
+          overflowX: "auto",
           height: "92vh",
           width: "100%",
-          padding: { sx: 0, md: "0 1em" },
         }}
       >
         <Videos videos={videos} />

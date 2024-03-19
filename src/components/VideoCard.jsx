@@ -2,10 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import { Typography, Card, CardContent, CardMedia } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
 
 import {
-  demoThumbnailUrl,
   demoVideoUrl,
   demoVideoTitle,
   demoChannelUrl,
@@ -20,11 +18,11 @@ const VideoCard = ({
 }) => (
   <Card
     sx={{
-      backgroundColor: "#111111",
-      margin: "0.5em",
-      width: { xs: "480px", sm: "364px", md: "300px" },
+      width: { xs: "90vw", sm: "364px", md: "300px" },
+      margin: { xs: "0.5em 1em", sm: "0.5em", md: "0.5em" },
+      backgroundColor: "#090f1a",
       borderRadius: "0.5em",
-      border: "2px solid #1f1f1fff",
+      border: "2px solid #273348",
     }}
   >
     <Link to={videoId ? `/video/${videoId}` : demoVideoUrl}>
@@ -33,13 +31,13 @@ const VideoCard = ({
         alt={snippet?.title}
         sx={{
           width: { xs: "100%", sm: "364px", md: "300px" },
-          height: { xs: 270, sm: 200, md: 170 },
+          height: { xs: "180px", sm: "200ox", md: "170px" },
         }}
       />
     </Link>
     <CardContent
       sx={{
-        backgroundColor: "#111111",
+        backgroundColor: "#090f1a",
         height: "2em",
       }}
     >
@@ -47,7 +45,7 @@ const VideoCard = ({
         <Typography
           variant="subtitle2"
           fontFamily={'"Montserrat", sans-serif'}
-          color="#FFF"
+          color="#dcd8d8"
           width={"100%"}
           noWrap
         >

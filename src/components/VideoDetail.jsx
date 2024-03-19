@@ -28,9 +28,9 @@ const VideoDetail = () => {
       setVideoDetail(data.items[0])
     );
 
-    fetchFromAPI(`search?part=snippet&relatedToVideoId=${id}&type=video`).then(
-      (data) => setVideos(data.items)
-    );
+    fetchFromAPI(
+      `search?part=snippet&relatedToVideoId=${id}&type=video`
+    ).then((data) => setVideos(data.items));
   }, [id]);
 
   if (!videoDetail?.snippet) return <Loader />;
@@ -42,24 +42,12 @@ const VideoDetail = () => {
 
   return (
     <Stack
-      direction={{ xs: "column", md: "row" }}
       sx={{
-        padding: { sx: 0, md: "0 1em" },
-        width: { sx: "auto", md: "auto" },
+        flexDirection: { sx: "column", md: "row" },
+        padding: { sx: "0 0em", md: "1em 8em" },
+        backgroundColor: "#191819",
       }}
     >
-      <Box
-        sx={{
-          width: { sx: "auto", md: "auto" },
-          height: { sx: "auto", md: "90vh" },
-          padding: { sx: 0, md: "0 1em" },
-        }}
-      >
-        <SideBar
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-      </Box>
       <Box flex={1}>
         <Box
           sx={{
@@ -76,10 +64,20 @@ const VideoDetail = () => {
             sx={{
               backgroundColor: "#1f1f1f",
               borderRadius: "1em",
-              margin: "0.5em ",
+              margin: "1em 0",
+              border: "2px solid #273348",
             }}
           >
-            <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
+            <Typography
+              p={2}
+              fontWeight="bold"
+              fontFamily={'"Montserrat", sans-serif'}
+              color="#dcd8d8"
+              noWrap
+              sx={{
+                fontSize: { md: "1.5em", sx: "1em" },
+              }}
+            >
               {title}
             </Typography>
             <Stack
@@ -109,13 +107,19 @@ const VideoDetail = () => {
           </Box>
         </Box>
       </Box>
-      <Box>
+      <Box
+        sx={{
+          margin: { md: "0 2em", sx: "0" },
+          backgroundColor: "#1f1f1f",
+          borderRadius: "1em",
+          border: "2px solid #273348",
+        }}
+      >
         <Typography
           color="#fff"
           variant="h5"
           fontWeight="bold"
-          p={2}
-          sx={{ position: "sticky" }}
+          padding={"0.75em"}
         >
           Recommended
         </Typography>
@@ -125,6 +129,7 @@ const VideoDetail = () => {
           sx={{
             overflowY: "auto",
             height: "82vh",
+            // margin: "1em 0em",
           }}
         >
           <Videos videos={videos} direction="column" height="90vh" />

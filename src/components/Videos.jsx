@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Stack, Box } from "@mui/system";
-import { VideoCard, ChannelCard } from "./";
+import { VideoCard } from "./";
 import Loader from "./Loader";
 
 const Videos = ({ videos, direction }) => {
@@ -12,12 +12,11 @@ const Videos = ({ videos, direction }) => {
       flexWrap="wrap"
       justifyContent="start"
       alignItems="start"
+      width={"100%"}
+      margin={"0em"}
     >
       {videos.map((item, idx) => (
-        <Box key={idx}>
-          {item.id.videoId && <VideoCard video={item} />}
-          {/* {item.id.channelId && <ChannelCard channelDetail={item} />} */}
-        </Box>
+        <Box key={idx}>{item.id.videoId && <VideoCard video={item} />}</Box>
       ))}
     </Stack>
   );

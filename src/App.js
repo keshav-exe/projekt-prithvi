@@ -20,6 +20,7 @@ const App = () => (
         <Route path="/channel/:id" element={<ChannelDetail />} />
         <Route path="/Search/:searchTerm" element={<SearchFeed />} />
       </Routes>
+      <Routes></Routes>
     </Box>
   </BrowserRouter>
 );
