@@ -1,31 +1,30 @@
 import React from "react";
 import { Box, CardContent, CardMedia, Typography } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
+
 import { Link } from "react-router-dom";
 import { demoProfilePicture } from "../utils/constants";
 
 const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
-      boxShadow: "none",
-      borderRadius: "20px",
       display: "flex",
-      justifyContent: "center",
+      margin: { xs: "0.5em 1em", sm: "0.5em", md: "0.5em" },
+      backgroundColor: "#090f1a",
+      borderRadius: "0.5em",
+      border: "2px solid #273348",
+      padding: "0.5em 4em",
+      flexDirection: { xs: "column", md: "row" },
+      width: { xs: "auto", md: "80vw" },
       alignItems: "center",
-      width: { xs: "356px", md: "320px" },
-      height: "326px",
-      margin: "auto",
-      marginTop,
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
       <CardContent
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "center",
-          textAlign: "center",
-          color: "#fff",
+          gap: "2em",
         }}
       >
         <CardMedia
@@ -35,24 +34,44 @@ const ChannelCard = ({ channelDetail, marginTop }) => (
           alt={channelDetail?.snippet?.title}
           sx={{
             borderRadius: "50%",
-            height: "180px",
-            width: "180px",
-            mb: 2,
-            border: "1px solid #e3e3e3",
+            height: "10em",
+            width: "10em",
           }}
         />
-        <Typography variant="h6">
-          {channelDetail?.snippet?.title}
-          <CheckCircle sx={{ fontSize: 16, color: "gray", ml: "5px" }} />
-        </Typography>
-        {channelDetail?.statistics?.subscriberCount && (
-          <Typography>
-            {parseInt(
-              channelDetail?.statistics?.subscriberCount
-            ).toLocaleString()}{" "}
-            Subscribers
+        <Box
+          sx={{
+            flexDirection: "column",
+            justifyContent: { xs: "center", md: "space-between" },
+          }}
+        >
+          <Typography
+            fontFamily={'"Montserrat", sans-serif'}
+            sx={{
+              fontWeight: "900",
+              color: "#dcd8d8",
+              fontSize: { xs: "2em", md: "4em" },
+            }}
+          >
+            {channelDetail?.snippet?.title}
           </Typography>
-        )}
+          {channelDetail?.statistics?.subscriberCount && (
+            <Typography
+              fontWeight="400"
+              fontFamily={'"Montserrat", sans-serif'}
+              color="#dcd8d8"
+              fontSize="1em"
+              backgroundColor="red"
+              padding="0.5em 1em"
+              borderRadius="0.5em"
+              textAlign="center"
+            >
+              {parseInt(
+                channelDetail?.statistics?.subscriberCount
+              ).toLocaleString()}
+              {" Subscribers"}
+            </Typography>
+          )}
+        </Box>
       </CardContent>
     </Link>
   </Box>

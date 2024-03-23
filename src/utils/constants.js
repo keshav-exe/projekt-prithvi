@@ -12,7 +12,7 @@ export const categories = [
   { name: "Gaming", icon: <SportsEsportsIcon /> },
 ];
 
-export const demoThumbnailUrl = "https://i.ibb.co/G2L2Gwp/API-Course.png";
+export const demoThumbnailUrl = "https://i.ibb.co/8YxYDN1/20240204-203143.jpg";
 export const demoChannelUrl = "/channel/@YouTube";
 export const demoVideoUrl = "/video/dQw4w9WgXcQ";
 export const demoChannelTitle = "YouTube";

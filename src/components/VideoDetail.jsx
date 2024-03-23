@@ -43,68 +43,60 @@ const VideoDetail = () => {
   return (
     <Stack
       sx={{
-        flexDirection: { sx: "column", md: "row" },
-        padding: { sx: "0 0em", md: "1em 8em" },
-        backgroundColor: "#191819",
+        flexDirection: { xs: "column", md: "row" },
+        padding: { xs: "0 0", md: "0em 7em" },
+        backgroundColor: "#0f0f0f",
       }}
     >
       <Box flex={1}>
+        <ReactPlayer
+          url={`https://www.youtube.com/watch?v=${id}`}
+          className="react-player"
+          controls
+          playing
+          pip
+        />
         <Box
           sx={{
-            top: 0,
-            width: "100%",
+            backgroundColor: "#1f1f1f",
+            borderRadius: "1em",
+            margin: "1em 0",
+            border: "2px solid #273348",
           }}
         >
-          <ReactPlayer
-            url={`https://www.youtube.com/watch?v=${id}`}
-            className="react-player"
-            controls
-          />
-          <Box
+          <Typography
+            p={2}
+            fontWeight="bold"
+            fontFamily={'"Montserrat", sans-serif'}
+            color="#dcd8d8"
+            noWrap
             sx={{
-              backgroundColor: "#1f1f1f",
-              borderRadius: "1em",
-              margin: "1em 0",
-              border: "2px solid #273348",
+              fontSize: { md: "1.75em", sx: "1em" },
             }}
           >
-            <Typography
-              p={2}
-              fontWeight="bold"
-              fontFamily={'"Montserrat", sans-serif'}
-              color="#dcd8d8"
-              noWrap
-              sx={{
-                fontSize: { md: "1.5em", sx: "1em" },
-              }}
-            >
-              {title}
-            </Typography>
-            <Stack
-              direction="row"
-              justifyContent="space-between"
-              sx={{ color: "#fff" }}
-              py={1}
-              px={2}
-            >
-              <Link to={`/channel/${channelId}`}>
-                <Typography
-                  variant={{ sm: "subtitle1", md: "h6" }}
-                  color="#fff"
-                >
-                  {channelTitle}
-                </Typography>
-              </Link>
-              <Stack direction="row" gap="20px" alignItems="center">
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(viewCount).toLocaleString()} views
-                </Typography>
-                <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                  {parseInt(likeCount).toLocaleString()} likes
-                </Typography>
-              </Stack>
+            {title}
+          </Typography>
+          <Stack
+            direction="row"
+            justifyContent="space-between"
+            sx={{ color: "#fff" }}
+            py={1}
+            px={2}
+          >
+            <Link to={`/channel/${channelId}`}>
+              <Typography variant={{ sm: "subtitle1", md: "h6" }} color="#fff">
+                {channelTitle}
+              </Typography>
+            </Link>
+            <Stack direction="row" gap="20px" alignItems="center">
+              <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                {parseInt(viewCount).toLocaleString()} views
+              </Typography>
+              <Typography variant="body1" sx={{ opacity: 0.7 }}>
+                {parseInt(likeCount).toLocaleString()} likes
+              </Typography>
             </Stack>
-          </Box>
+          </Stack>
         </Box>
       </Box>
       <Box
@@ -113,6 +105,7 @@ const VideoDetail = () => {
           backgroundColor: "#1f1f1f",
           borderRadius: "1em",
           border: "2px solid #273348",
+          height: "92vh",
         }}
       >
         <Typography
@@ -128,11 +121,10 @@ const VideoDetail = () => {
           alignItems="center"
           sx={{
             overflowY: "auto",
-            height: "82vh",
-            // margin: "1em 0em",
+            height: "80vh",
           }}
         >
-          <Videos videos={videos} direction="column" height="90vh" />
+          <Videos videos={videos} direction="column" />
         </Box>
       </Box>
     </Stack>

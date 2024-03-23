@@ -1,6 +1,7 @@
 :root {
   --primary-color: #020305;
-  ---secondary-color: #191819;
+  /* ---secondary-color: #191819; */
+  ---secondary-color: #0f0f0f;
 
   --text: #dcd8d8;
 }
@@ -32,7 +33,7 @@ a {
 }
 
 .react-player {
-  height: 77vh !important;
+  height: 78vh !important;
   width: 100% !important;
 }
 
@@ -63,21 +64,9 @@ a {
   display: flex;
   direction: "row";
   justify-content: space-between;
-  padding: 1em 9em;
-  background-color: var(--primary-color);
+  padding: 1em 7em;
+  background-color: var(---secondary-color);
 }
-
-@media screen and (max-width: 900px) {
-  .category-btn {
-    margin: 0.3em;
-  }
-}
-
-/* @media screen and (max-width: 800px) {
-  .copyright {
-    display: none !important;
-  }
-} */
 
 @media screen and (max-width: 600px) {
   .scroll-horizontal {

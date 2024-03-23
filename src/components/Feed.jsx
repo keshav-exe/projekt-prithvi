@@ -23,7 +23,7 @@ const Feed = () => {
         flexDirection: { sx: "column", md: "column" },
         padding: { sx: "0 0em", md: "0 8em" },
         width: "100vw",
-        backgroundColor: "#191819",
+        backgroundColor: "#0f0f0f",
       }}
     >
       <Box
