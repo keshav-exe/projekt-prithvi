@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 120 70% 95%;
+    --foreground: 120 100% 50%;
+    --primary: 120 50% 4%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 120 50% 4%;
+    --foreground: 120 100% 50%;
+    --primary: 120 50% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: hsl(120, 69%, 90%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(120, 100%, 50%);
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: #050c0f;
+  background: hsl(120, 69%, 90%);
+}
+
+::selection {
+  color: #050c0f;
+  background: hsl(120, 69%, 90%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.react-player {
+  height: 25vh !important;
+  width: 100% !important;
+}
+@media only screen and (max-width: 640px) {
+  .react-player {
+    height: 23vh !important;
+  }
+}
+@media only screen and (min-width: 640px) and (max-width: 900px) {
+  .react-player {
+    height: 47vh !important;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
+  .react-player {
+    height: 54vh !important;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .react-player {
+    height: 83vh !important;
+  }
+}
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl lg:mx-auto py-5 px-5 md:px-12 w-full;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+}
