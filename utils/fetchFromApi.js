@@ -13,9 +13,9 @@ const getOptions = (apiKey) => {
 };
 
 const apiKeys = [
-  process.env.API_KEY_1,
-  process.env.API_KEY_2,
-  process.env.API_KEY_3,
+  process.env.NEXT_PUBLIC_API_KEY_1,
+  process.env.NEXT_PUBLIC_API_KEY_2,
+  process.env.NEXT_PUBLIC_API_KEY_3,
 ]; // Filter out any undefined values
 
 let currentApiKeyIndex = 0;
