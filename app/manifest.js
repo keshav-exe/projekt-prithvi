@@ -1,20 +1,14 @@
 export default function manifest() {
   return {
-    name: "projekt-prithvi",
-    short_name: "prithvi",
-    description:
-      "A dynamic Next.js YouTube clone designed for seamless exploration.",
-    start_url: "/",
-    display: "standalone",
-    background_color: "#40BF40",
-    theme_color: "#40BF40",
+    name: "Projekt Prithvi",
+    short_name: "Prithvi",
     icons: [
       {
         src: "/favicon.ico",
-        sizes: "any",
-        type: "image/x-icon",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any maskable",
       },
-      ,
       {
         src: "/logo192.png",
         sizes: "192x192",
@@ -26,5 +20,10 @@ export default function manifest() {
         type: "image/png",
       },
     ],
+    theme_color: "#FFFFFF",
+    background_color: "#FFFFFF",
+    start_url: "/",
+    display: "standalone",
+    orientation: "portrait",
   };
 }
