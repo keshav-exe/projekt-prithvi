@@ -1,5 +1,7 @@
 # Project Prithvi
 
+![Prithvi Logo](https://utfs.io/f/926e63b9-1953-449d-88b3-46a9a6d29cb3-5nw9l7.png)
+
 Welcome to Project Prithvi, a Next.js YouTube clone that brings the power of Next.js 14.1.4, Tailwind CSS, Framer Motion, and Axios together to deliver an immersive video browsing experience. Say goodbye to boring YouTube interfaces and hello to sleek design and smooth animations!
 
 ## Features:
