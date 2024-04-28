@@ -6,7 +6,7 @@ export default function manifest() {
       {
         src: "/favicon.ico",
         sizes: "192x192",
-        type: "image/png",
+        type: "image/x-icon",
         purpose: "any maskable",
       },
       {

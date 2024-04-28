@@ -9,6 +9,7 @@ import Navbar from "../components/navbar";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
+  manifest: "/manifest.json",
   title: "Projekt Prithvi",
   description:
     "A dynamic Next.js YouTube clone designed for seamless exploration. Inspired by the Sanskrit word for Earth Prithvi offers an ad-free experience and a commitment to open-source. ",
