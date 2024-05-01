@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="wrapper mt-12">
+    <footer className="wrapper">
       <hr className="opacity-50" />
       <div className="flex flex-col md:flex-row gap-6 my-4 justify-between text-left">
         <Link

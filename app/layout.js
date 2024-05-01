@@ -34,7 +34,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${manrope.className} bg-background h-full`}>
+      <body
+        className={`${manrope.className} bg-background min-h-screen justify-evenly flex flex-col`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

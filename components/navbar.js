@@ -25,47 +25,58 @@ const Navbar = () => {
     }
   };
   return (
-    <header className="fixed w-full bg-background/50 z-10 backdrop-blur">
+    <header className="fixed w-full bg-background/50 z-10 backdrop-blur items-center">
       <div className="wrapper flex justify-between flex-row gap-6 text-primary">
-        <Link href="/" className="my-auto">
+        <Link href="/" className="items-center">
           <svg
-            width="256"
-            height="256"
-            viewBox="0 0 256 388"
+            viewBox="0 0 512 512"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8 text-primary transition-all hover:scale-125 duration-300 drop-shadow-[0_0_2px_rgba(0,0,0,0.4)]"
+            className="w-12 h-12 rounded-md text-primary transition-all hover:scale-110
+            duration-300 hover:shadow-[0_0_64px_-8px_rgba(0,255,0,0.4)]"
           >
+            <rect width="512" height="512" fill="url(#paint0_linear_119_2)" />
             <path
-              d="M255.96 47.16H220.68V266.4H164.16V187.92C151.44 201.84 133.68 208.8 110.88 208.8C85.2 208.8 65.4 200.28 51.48 183.24C37.56 165.96 30.6 143.52 30.6 115.92V47.16H0V0H255.96V47.16ZM164.16 47.16H87.12V115.92C87.12 129.84 90.24 140.88 96.48 149.04C102.96 157.2 112.68 161.28 125.64 161.28C137.88 161.28 147.36 157.32 154.08 149.4C160.8 141.48 164.16 131.4 164.16 119.16V47.16Z"
-              fill="url(#paint0_linear_120_6)"
+              d="M344 155.385H319.741V305.937H280.878V252.045C272.131 261.603 259.919 266.383 244.242 266.383C226.584 266.383 212.97 260.532 203.398 248.831C193.827 236.965 189.041 221.555 189.041 202.602V155.385H168V123H344V155.385ZM280.878 155.385H227.904V202.602C227.904 212.161 230.05 219.742 234.34 225.346C238.796 230.949 245.48 233.751 254.391 233.751C262.807 233.751 269.326 231.032 273.947 225.593C278.567 220.154 280.878 213.232 280.878 204.827V155.385Z"
+              fill="url(#paint1_linear_119_2)"
             />
             <path
-              d="M239.673 381.6C227.433 385.44 214.473 387.36 200.793 387.36C178.953 387.36 160.233 381.72 144.633 370.44C129.033 359.4 121.233 342.24 121.233 318.96C121.233 298.8 128.193 282.6 142.113 270.36C156.033 258.12 175.233 252 199.713 252C208.833 252 215.793 252.24 220.593 252.72V290.52H204.393C195.273 290.52 188.313 292.92 183.513 297.72C178.473 302.76 175.953 309.12 175.953 316.8C175.953 325.68 179.073 332.16 185.313 336.24C191.553 340.32 199.713 342.36 209.793 342.36C219.153 342.36 229.113 340.8 239.673 337.68V381.6Z"
-              fill="url(#paint1_linear_120_6)"
+              d="M332.801 385.045C324.384 387.682 315.473 389 306.067 389C291.049 389 278.177 385.127 267.451 377.381C256.724 369.8 251.361 358.016 251.361 342.03C251.361 328.186 256.146 317.061 265.718 308.656C275.289 300.251 288.491 296.048 305.324 296.048C311.595 296.048 316.381 296.213 319.681 296.543V322.5H308.542C302.271 322.5 297.485 324.148 294.185 327.444C290.719 330.905 288.986 335.273 288.986 340.546C288.986 346.644 291.132 351.094 295.422 353.896C299.713 356.698 305.324 358.099 312.255 358.099C318.691 358.099 325.54 357.027 332.801 354.885V385.045Z"
+              fill="url(#paint2_linear_119_2)"
             />
             <defs>
               <linearGradient
-                id="paint0_linear_120_6"
-                x1="128.12"
-                y1="-129.6"
-                x2="128.12"
-                y2="410.4"
+                id="paint0_linear_119_2"
+                x1="256"
+                y1="0"
+                x2="256"
+                y2="512"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.455" stop-color="#40BF40" />
-                <stop offset="0.815" stop-color="#ECF9EC" />
+                <stop offset="0.455" stopColor="#050F05" />
+                <stop offset="1.0001" stopColor="#0D260D" />
               </linearGradient>
               <linearGradient
-                id="paint1_linear_120_6"
-                x1="128.12"
-                y1="-129.6"
-                x2="128.12"
-                y2="410.4"
+                id="paint1_linear_119_2"
+                x1="256.096"
+                y1="34.0037"
+                x2="256.096"
+                y2="404.821"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.455" stop-color="#40BF40" />
-                <stop offset="0.815" stop-color="#ECF9EC" />
+                <stop offset="0.455" stopColor="#40BF40" />
+                <stop offset="0.815" stopColor="#ECF9EC" />
+              </linearGradient>
+              <linearGradient
+                id="paint2_linear_119_2"
+                x1="256.096"
+                y1="34.0037"
+                x2="256.096"
+                y2="404.821"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0.455" stopColor="#40BF40" />
+                <stop offset="0.815" stopColor="#ECF9EC" />
               </linearGradient>
             </defs>
           </svg>
