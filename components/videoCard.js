@@ -5,6 +5,8 @@ import Link from "next/link";
 import markdownToTxt from "markdown-to-txt";
 import Loading from "../app/loading";
 
+export const dynamic = "force-dynamic";
+
 const VideoCard = ({
   video: {
     type: { video },
@@ -35,13 +37,15 @@ const VideoCard = ({
         >
           <Image
             src={
-              thumbnail[2]?.url
+              thumbnail[4]?.url
+                ? thumbnail[4]?.url
+                : thumbnail[3]?.url
+                ? thumbnail[3]?.url
+                : thumbnail[2]?.url
                 ? thumbnail[2]?.url
                 : thumbnail[1]?.url
                 ? thumbnail[1]?.url
                 : thumbnail[0]?.url
-                ? thumbnail[0]?.url
-                : "https://utfs.io/f/da9f1785-a717-4814-9b2d-dec5cb14b9a3-m05xik.jpg"
             }
             alt="thumbnail"
             width={1280}
