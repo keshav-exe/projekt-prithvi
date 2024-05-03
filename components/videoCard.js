@@ -40,10 +40,12 @@ const VideoCard = ({
                 : thumbnail[1]?.url
                 ? thumbnail[1]?.url
                 : thumbnail[0]?.url
+                ? thumbnail[0]?.url
+                : "https://utfs.io/f/da9f1785-a717-4814-9b2d-dec5cb14b9a3-m05xik.jpg"
             }
             alt="thumbnail"
-            width={1920}
-            height={1080}
+            width={1280}
+            height={720}
             className="rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_64px_-16px_rgba(0,255,0,0.4)]"
           />
           <h2 className="text-primary text-base font-semibold transition-all duration-300 line-clamp-2">
