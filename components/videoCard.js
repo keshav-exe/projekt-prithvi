@@ -26,7 +26,7 @@ const VideoCard = ({
         duration: 1,
         ease: [0.22, 0.5, 0.36, 1],
       }}
-      className="flex rounded w-full md:w-[42vw] lg:w-[28vw] xl:w-[28vw] 2xl:w-[22vw] max-h-[50vh] justify-between"
+      className="flex rounded w-full justify-between"
     >
       <div className="flex flex-col gap-1">
         <Link

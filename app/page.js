@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
         <hr className="opacity-20" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-between flex-col md:flex-row gap-5 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {videos.map((data, idx) => (
             <li key={idx} className="list-none">
               <VideoCard video={data} />
