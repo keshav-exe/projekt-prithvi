@@ -32,7 +32,7 @@ const page = () => {
       <div className=" text-primary wrapper flex flex-col gap-6 min-h-screen">
         <div className="flex flex-col mt-20 md:flex-row sm:mx-auto md:mx-0 gap-5 bg-foreground/15 backdrop-blur-md rounded-xl border-2 border-foreground/20 p-10 shadow-[0_0_64px_-16px_rgba(0,255,0,0.2)]">
           <Image
-            src={channelDetail?.avatar[2].url}
+            src={channelDetail?.avatar[2]?.url}
             width={180}
             height={180}
             alt="avatar"
