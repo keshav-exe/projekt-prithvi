@@ -5,8 +5,6 @@ import Link from "next/link";
 import markdownToTxt from "markdown-to-txt";
 import Loading from "../app/loading";
 
-export const dynamic = "force-dynamic";
-
 const VideoCard = ({
   video: {
     type: { video },
@@ -28,7 +26,7 @@ const VideoCard = ({
         duration: 1,
         ease: [0.22, 0.5, 0.36, 1],
       }}
-      className="flex rounded w-full justify-between"
+      className="flex rounded w-full md:w-[42vw] lg:w-[28vw] xl:w-[28vw] 2xl:w-[22vw] max-h-[50vh] justify-between"
     >
       <div className="flex flex-col gap-1">
         <Link
@@ -37,19 +35,15 @@ const VideoCard = ({
         >
           <Image
             src={
-              thumbnail[4]?.url
-                ? thumbnail[4]?.url
-                : thumbnail[3]?.url
-                ? thumbnail[3]?.url
-                : thumbnail[2]?.url
+              thumbnail[2]?.url
                 ? thumbnail[2]?.url
                 : thumbnail[1]?.url
                 ? thumbnail[1]?.url
                 : thumbnail[0]?.url
             }
             alt="thumbnail"
-            width={1280}
-            height={720}
+            width={1920}
+            height={1080}
             className="rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_64px_-16px_rgba(0,255,0,0.4)]"
           />
           <h2 className="text-primary text-base font-semibold transition-all duration-300 line-clamp-2">
