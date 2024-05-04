@@ -11,6 +11,7 @@ const page = () => {
   const [videos, setVideos] = useState([]);
   const [channelDetail, setChannelDetail] = useState(null);
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchFromAPI(`channel/home?id=${id}`).then((data) =>
@@ -19,17 +20,19 @@ const page = () => {
   }, [id]);
 
   useEffect(() => {
-    fetchFromAPI(`channel/videos?id=${id}`).then((data) =>
-      setVideos(data.data)
-    );
+    setLoading(true);
+    fetchFromAPI(`channel/videos?id=${id}`)
+      .then((data) => setVideos(data.data))
+      .finally(() => setLoading(false));
   }, [id]);
+
   return (
-    <section className="text-primary">
+    <section>
       <Navbar />
-      <div className="wrapper flex flex-col gap-6">
+      <div className=" text-primary wrapper flex flex-col gap-6 min-h-screen">
         <div className="flex flex-col mt-20 md:flex-row sm:mx-auto md:mx-0 gap-5 bg-foreground/15 backdrop-blur-md rounded-xl border-2 border-foreground/20 p-10 shadow-[0_0_64px_-16px_rgba(0,255,0,0.2)]">
           <Image
-            src={channelDetail?.avatar[2].url}
+            src={channelDetail?.avatar[2]?.url}
             width={180}
             height={180}
             alt="avatar"
@@ -44,13 +47,18 @@ const page = () => {
         </div>
 
         <h1 className="text-3xl font-bold">Latest Uploads</h1>
-        <div className="flex flex-wrap justify-between flex-col md:flex-row gap-5 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
           {videos.map((data, idx) => (
             <li key={idx} className="list-none">
               <VideoCard video={data} />
             </li>
           ))}
         </div>
+        {loading && (
+          <div className="wrapper flex flex-center justify-center my-auto">
+            <Loading />
+          </div>
+        )}
       </div>
     </section>
   );
