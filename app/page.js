@@ -2,28 +2,23 @@
 import Navbar from "../components/navbar";
 import VideoCard from "../components/videoCard";
 import { fetchFromAPI } from "../utils/fetchFromApi";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../components/ui/button";
 import Loading from "./loading";
+
 export default function Home() {
   const [videos, setVideos] = useState([]);
   const [category, setCategory] = useState("home");
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    fetchFromAPI(`${category}`)
-      .then((data) => {
-        const filteredVideos = data.data.filter(
-          (item) => item.type === "video"
-        );
-        setVideos(filteredVideos);
-      })
-      .finally(() => setLoading(false));
+    fetchFromAPI(`${category}`).then((data) => {
+      const filteredVideos = data.data.filter((item) => item.type === "video");
+      setVideos(filteredVideos);
+    });
   }, [category]);
 
   return (
-    <section className="text-primary min-h-screen">
+    <section className="text-primary">
       <Navbar />
       <div className="wrapper flex flex-col gap-6">
         <div className="flex justify-between my-auto mt-20">
@@ -77,18 +72,13 @@ export default function Home() {
           </div>
         </div>
         <hr className="opacity-20" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+        <div className="flex flex-wrap justify-between flex-col md:flex-row gap-5 w-full">
           {videos.map((data, idx) => (
             <li key={idx} className="list-none">
               <VideoCard video={data} />
             </li>
           ))}
         </div>
-        {loading && (
-          <div className="wrapper flex flex-center justify-center my-auto">
-            <Loading />
-          </div>
-        )}
       </div>
     </section>
   );

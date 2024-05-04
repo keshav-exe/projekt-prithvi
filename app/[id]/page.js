@@ -13,62 +13,58 @@ const Page = () => {
   const [videos, setVideos] = useState([]);
   const [videoDetail, setVideoDetail] = useState(null);
   const { id } = useParams();
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchFromAPI(`video/info?id=${id}`)
-      .then((data) => setVideoDetail(data))
-      .finally(() => setLoading(false));
+    fetchFromAPI(`video/info?id=${id}`).then((data) => setVideoDetail(data));
   }, [id]);
 
   useEffect(() => {
-    fetchFromAPI(`related?id=${id}`)
-      .then((data) => setVideos(data.data))
-      .finally(() => setLoading(false));
+    fetchFromAPI(`related?id=${id}`).then((data) => setVideos(data.data));
   }, [id]);
 
   return (
     <section className="text-primary">
-      <Navbar />
-      <div className="wrapper flex flex-col gap-5">
-        <div className="flex mt-20">
-          <div className="rounded-xl overflow-hidden w-screen transition-all duration-300 hover:shadow-[0_0_42px_-16px_rgba(0,255,0,0.4)]">
-            <ReactPlayer
-              className="react-player drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
-              url={`https://www.youtube.com/watch?v=${id}`}
-              controls
-              width="100%"
-              height="100%"
-              playing={true}
-              pip
-            />
+      <Suspense fallback={<Loading />}>
+        <Navbar />
+        <div className="wrapper flex flex-col gap-5">
+          <div className="flex mt-20">
+            <div className="rounded-xl overflow-hidden w-screen transition-all duration-300 hover:shadow-[0_0_42px_-16px_rgba(0,255,0,0.4)]">
+              <ReactPlayer
+                className="react-player drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
+                url={`https://www.youtube.com/watch?v=${id}`}
+                controls
+                width="100%"
+                height="100%"
+                playing={true}
+                pip
+              />
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-3">
-          <h1 className="text-primary text-lg md:text-2xl">
-            {videoDetail?.title}
-          </h1>
-          <Link
-            href={`/channel/${videoDetail?.channelId}`}
-            className="flex gap-2 text-primary/80 text-base md:text-lg"
-          >
-            {videoDetail?.channelTitle}
-          </Link>
-          <p className="text-primary/60 text-sm md:text-base">
-            {parseInt(videoDetail?.viewCount).toLocaleString()} views
-          </p>
-        </div>
-        <hr className="opacity-20" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
-          <Suspense fallback={<Loading />}>
+          <div className="flex flex-col gap-3">
+            <h1 className="text-primary text-lg md:text-2xl">
+              {videoDetail?.title}
+            </h1>
+            <Link
+              href={`/channel/${videoDetail?.channelId}`}
+              className="flex gap-2 text-primary/80 text-base md:text-lg"
+            >
+              {videoDetail?.channelTitle}
+            </Link>
+            <p className="text-primary/60 text-sm md:text-base">
+              {parseInt(videoDetail?.viewCount).toLocaleString()} views
+            </p>
+          </div>
+          <hr className="opacity-20" />
+
+          <div className="flex flex-wrap justify-start flex-col md:flex-row gap-5 w-full">
             {videos.map((data, idx) => (
               <li key={idx} className="list-none">
                 <VideoCard video={data} />
               </li>
             ))}
-          </Suspense>
+          </div>
         </div>
-      </div>
+      </Suspense>
     </section>
   );
 };
