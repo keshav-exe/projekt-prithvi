@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import markdownToTxt from "markdown-to-txt";
 import Loading from "../app/loading";
+import { Dot } from "lucide-react";
 
 const VideoCard = ({
   video: {
@@ -19,20 +20,17 @@ const VideoCard = ({
 }) => (
   <Suspense fallback={<Loading />}>
     <motion.div
-      initial={{ scale: 0.9, y: 20, opacity: 0 }}
-      animate={{ scale: 1, y: 0, opacity: 1 }}
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{
-        delay: 1,
-        duration: 1,
-        ease: [0.22, 0.5, 0.36, 1],
+        duration: 0.5,
+        type: "spring",
+        damping: 10,
       }}
-      className="flex rounded w-full max-h-[50vh] justify-between"
+      className="flex rounded-2xl w-full max-h-[50vh] justify-between"
     >
-      <div className="flex flex-col gap-1">
-        <Link
-          href={videoId ? `/${videoId}` : ""}
-          className="flex flex-col gap-3"
-        >
+      <div className="flex flex-col gap-2 w-full hover:-translate-y-2 transition-all duration-300">
+        <Link href={videoId && `/${videoId}`}>
           <Image
             src={
               thumbnail[2]?.url
@@ -42,25 +40,31 @@ const VideoCard = ({
                 : thumbnail[0]?.url
             }
             alt="thumbnail"
-            width={1920}
-            height={1080}
-            className="rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_64px_-16px_rgba(0,255,0,0.4)]"
+            width={100}
+            height={100}
+            className="aspect-video w-full rounded-xl object-cover"
           />
-          <h2 className="text-primary text-base font-semibold transition-all duration-300 line-clamp-2">
+        </Link>
+        <div className="flex flex-col gap-1">
+          <Link
+            href={videoId && `/${videoId}`}
+            className="text-primary font-medium transition-all duration-300 line-clamp-2"
+          >
             {markdownToTxt(title)}
-          </h2>
-        </Link>
-        <Link
-          href={`/channel/${channelId}`}
-          className="text-primary/80 text-sm hover:text-primary/80 transition-all duration-300"
-        >
-          {channelTitle}
-        </Link>
-        <div className="flex gap-2">
-          <p className="text-primary/80 text-sm">
-            {parseInt(viewCount).toLocaleString()} Views •
-          </p>
-          <p className="text-primary/80 text-sm">{publishedTimeText}</p>
+          </Link>
+          <Link
+            href={`/channel/${channelId}`}
+            className="text-primary text-sm hover:text-primary/80 transition-all duration-300"
+          >
+            {channelTitle}
+          </Link>
+          <div className="flex gap-1 items-center">
+            <p className="text-primary/80 text-xs">
+              {parseInt(viewCount).toLocaleString()} Views{" "}
+            </p>
+            <Dot className="size-4" />
+            <p className="text-primary/80 text-xs">{publishedTimeText}</p>
+          </div>
         </div>
       </div>
     </motion.div>
