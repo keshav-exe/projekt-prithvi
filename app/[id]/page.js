@@ -4,7 +4,7 @@ import { fetchFromAPI } from "../../utils/fetchFromApi";
 import ReactPlayer from "react-player";
 import VideoCard from "../../components/videoCard";
 import Navbar from "../../components/navbar";
-import Loading from "../loading";
+import Loading from "../../app/loading";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
@@ -32,9 +32,9 @@ const Page = () => {
       <Navbar />
       <div className="wrapper flex flex-col gap-5">
         <div className="flex mt-20">
-          <div className="rounded-xl overflow-hidden w-screen transition-all duration-300 hover:shadow-[0_0_42px_-16px_rgba(0,255,0,0.4)]">
+          <div className="rounded-xl overflow-hidden w-full">
             <ReactPlayer
-              className="react-player drop-shadow-[0_0_6px_rgba(0,0,0,0.35)]"
+              className="react-player "
               url={`https://www.youtube.com/watch?v=${id}`}
               controls
               width="100%"
@@ -45,9 +45,9 @@ const Page = () => {
           </div>
         </div>
         <div className="flex flex-col gap-3">
-          <h1 className="text-primary text-lg md:text-2xl">
+          <h2 className="text-primary text-lg md:text-2xl">
             {videoDetail?.title}
-          </h1>
+          </h2>
           <Link
             href={`/channel/${videoDetail?.channelId}`}
             className="flex gap-2 text-primary/80 text-base md:text-lg"
@@ -58,8 +58,9 @@ const Page = () => {
             {parseInt(videoDetail?.viewCount).toLocaleString()} views
           </p>
         </div>
-        <hr className="opacity-20" />
+        <hr />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full">
+          <h3 className="text-primary text-lg md:text-2xl">Related Videos</h3>
           <Suspense fallback={<Loading />}>
             {videos.map((data, idx) => (
               <li key={idx} className="list-none">

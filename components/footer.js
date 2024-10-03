@@ -30,12 +30,6 @@ const Footer = () => {
           <span className="my-auto">Portfolio</span>
         </Link>
 
-        <Link
-          href="/"
-          className="text-foreground/70 my-auto font-medium hover:underline "
-        >
-          Projkt Prithvi
-        </Link>
         <p className="text-primary/80 my-auto cursor-default font-medium">
           Designed and Developed by Keshav
         </p>

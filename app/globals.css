@@ -13,8 +13,8 @@
 
 @layer base {
   :root {
-    --background: 120 70% 95%;
-    --foreground: 120 100% 45%;
+    --background: 120 25% 93%;
+    --foreground: 120 25% 98%;
 
     --card: 120 50% 100%;
     --card-foreground: 120 0% 4%;
@@ -45,8 +45,8 @@
   }
 
   .dark {
-    --background: 120 70% 4%;
-    --foreground: 120 100% 45%;
+    --background: 120 25% 3%;
+    --foreground: 120 25% 6%;
 
     --card: 120 50% 4%;
     --card-foreground: 120 50% 98%;
@@ -82,37 +82,6 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* width */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: none;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: hsl(120, 69%, 90%);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(120, 100%, 50%);
-}
-
-::-moz-selection {
-  /* Code for Firefox */
-  color: #050c0f;
-  background: hsl(120, 69%, 90%);
-}
-
-::selection {
-  color: #050c0f;
-  background: hsl(120, 69%, 90%);
 }
 
 * {

@@ -1,10 +1,10 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
-import { fetchFromAPI } from "../../../utils/fetchFromApi";
+import { fetchFromAPI } from "@/utils/fetchFromApi";
 import { useParams } from "next/navigation";
-import Navbar from "../../../components/navbar";
-import Loading from "../../loading";
-import VideoCard from "../../../components/videoCard";
+import Navbar from "@/components/navbar";
+import Loading from "@/app/loading";
+import VideoCard from "@/components/videoCard";
 import Image from "next/image";
 
 const page = () => {
