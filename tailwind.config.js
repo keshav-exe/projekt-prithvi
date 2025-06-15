@@ -73,5 +73,16 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    'scale-0',
+    'scale-100', 
+    'rotate-0',
+    'rotate-90',
+    '-rotate-90',
+    'dark:scale-0',
+    'dark:scale-100',
+    'dark:rotate-0',
+    'dark:rotate-90'
+  ],
   plugins: [require("tailwindcss-animate")],
 };

@@ -42,7 +42,9 @@ export default function RootLayout({ children }) {
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={false}
+          storageKey="prithvi-theme"
+          themes={['light', 'dark']}
         >
           <Suspense fallback={<Loading />}>
             {children}
